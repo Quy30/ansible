@@ -1,13 +1,13 @@
 ---
 - name: Cau hinh tren router
-  hosts: all
+  hosts: 10.215.26.180 
   gather_facts: no
 
   tasks:
-    - name: Show ip
+    - name: Show vlan
       ios_command:
         commands:
-          - show ip int brief
+          - show vlan
       register: output
 
     - debug: var=output.stdout_lines
